@@ -30,15 +30,15 @@ public class Cliente implements Serializable {
 	@Temporal(TemporalType.DATE) 
 	private Date createAt;
 	
-	public final long getId() {return id;}
-	public final void setId(long id) {this.id = id;}
-	public final String getNombre() {return nombre;}
-	public final void setNombre(String nombre) {this.nombre = nombre;}
-	public final String getApellido() {return apellido;}
-	public final void setApellido(String apellido) {this.apellido = apellido;}
-	public final String getEmail() {return email;}
-	public final void setEmail(String email) {this.email = email;}
-	public final Date getCreateAt() {return createAt;}
-	public final void setCreateAt(Date createAt) {this.createAt = createAt;}
+	public long getId() {return id;}
+	public void setId(long id) {this.id = id;}
+	public String getNombre() {return nombre;}
+	public void setNombre(String nombre) {this.nombre = nombre;}
+	public String getApellido() {return apellido;}
+	public void setApellido(String apellido) {this.apellido = apellido;}
+	public String getEmail() {return email;}
+	public void setEmail(String email) {this.email = email;}
+	public Date getCreateAt() {return createAt;}
+	public void setCreateAt(Date createAt) {this.createAt = createAt;}
 
 }

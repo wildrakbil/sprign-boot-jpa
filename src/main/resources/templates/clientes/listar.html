@@ -1,39 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
 <head>
-<meta charset="UTF-8"/>
-<title th:text="${titulo}">in</title>
+    <meta charset="UTF-8"/>
+    <title th:text="${titulo}">in</title>
 </head>
 <body>
-	<h1 th:text="${titulo}"></h1>
-	<table>
-		<thead>
-			<tr>
-				<th>id</th>
-			</tr>
-			<tr>
-				<th>nombre</th>
-			</tr>
-			<tr>
-				<th>apellido</th>
-			</tr>
-			<tr>
-				<th>correo</th>
-			</tr>
-			<tr>
-				<th>fecha</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="cliente:${clientes}">
-				<td th:text=${cliente.id}></td>
-				<td th:text=${cliente.nombre}></td>
-				<td th:text=${cliente.apellido}></td>
-				<td th:text=${cliente.email}></td>
-				<td th:text=${cliente.createAt}></td>
-			</tr>
-		</tbody>
-	</table>
-
+<h1 th:text="${titulo}"></h1>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+    </tr>
+    <tr>
+        <th>nombre</th>
+    </tr>
+    <tr>
+        <th>apellido</th>
+    </tr>
+    <tr>
+        <th>correo</th>
+    </tr>
+    <tr>
+        <th>fecha</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cliente:${clientes}">
+        <td th:text=${cliente.id}></td>
+        <td th:text=${cliente.nombre}></td>
+        <td th:text=${cliente.apellido}></td>
+        <td th:text=${cliente.email}></td>
+        <td th:text=${cliente.createAt}></td>
+    </tr>
+    </tbody>
+</table>
+<nav th:replace="paginator-nav :: paginador"></nav>
 </body>
 </html>

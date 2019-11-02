@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.springboot.app.models.entity.Cliente;
 
 @Repository("ClienteDaoJPA")
-public class ClienteDaoImpl implements IClienteDao{
+public abstract class ClienteDaoImpl implements IClienteDao{
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -19,7 +19,7 @@ public class ClienteDaoImpl implements IClienteDao{
 	@Transactional(readOnly=true)
 	@Override
 	public List<Cliente> findAll() {
-		return entityManager.createQuery("form CLiente").getResultList();
+		return entityManager.createQuery("from Cliente").getResultList();
 	}
 
 
