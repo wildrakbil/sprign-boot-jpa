@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+<header th:replace="layout/layout :: header"></header>
+<h1 th:text="${titulo}"></h1>
+<div th:object="${cliente}" th:remove="tag"></div>
+<form th:action="@{/cliente/form}" th:object="${cliente}" method="post">
+    <table class="table table-striped table-borderred">
+        <intput type="hedden" th:field="*{id}"/>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{nombre}" class="form-control" th:errorclass="'form-conrol alert-danger'"/>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label">Apellido</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{apellido}" class="form-control" th:errorclass="'form-conrol alert-danger'"/>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{email}" class="form-control" th:errorclass="'form-conrol alert-danger'"/>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label">Fecha</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{createAt}" class="form-control" th:errorclass="'form-conrol alert-danger'"/>
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}"></small>
+            </div>
+        </div>
+        <tr>
+            <td><input  type="submit"  th:value="${btnName}" class="btn btn-primary"/></td>
+        </tr>
+    </table>
+    <input type="hidden" th:field="*{id}"/>
+</form>
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

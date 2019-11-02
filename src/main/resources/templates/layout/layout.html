@@ -2,42 +2,35 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymleaf.org">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8"/>
     <title th:text="${titulo}">in</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1 th:text="${titulo}"></h1>
-<table>
-    <thead>
-    <tr>
-        <th>id</th>
-    </tr>
-    <tr>
-        <th>nombre</th>
-    </tr>
-    <tr>
-        <th>apellido</th>
-    </tr>
-    <tr>
-        <th>correo</th>
-    </tr>
-    <tr>
-        <th>fecha</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="cliente:${clientes}">
-        <td th:text=${cliente.id}></td>
-        <td th:text=${cliente.nombre}></td>
-        <td th:text=${cliente.apellido}></td>
-        <td th:text=${cliente.email}></td>
-        <td th:text=${cliente.createAt}></td>
-    </tr>
-    </tbody>
-</table>
-<nav th:replace="paginator-nav :: paginator"></nav>
+<header th:fragment="header">
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h5 class="text-white h4">Collapsed content</h5>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+</header>
+<div class="container"></div>
+<footer th:fragment="footer" class="container">
+
+
+</footer>
+
 </body>
 </html>
